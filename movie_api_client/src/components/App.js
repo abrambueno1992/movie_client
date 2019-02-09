@@ -6,6 +6,7 @@ import axios from "axios";
 import NowPlaying from "./nowPlaying/NowPlaying";
 import Popular from "./popular/Popular";
 import TopRated from "./topRated/TopRated";
+import DisplaySelection from "./displaySelection/DisplaySelection";
 // import logo from './logo.svg';
 import "./App.css";
 
@@ -34,7 +35,9 @@ class App extends Component {
         <div>
           <Route exact path="/" component={NowPlaying} />
           <Route exact path="/popular" component={Popular} />
+          <Route exact path="/popular/:id" component={DisplaySelection} />
           <Route exact path="/top-rated" component={TopRated} />
+          <Route exact path="/top-rated/:id" component={DisplaySelection} />
         </div>
       </Router>
     );

@@ -25,6 +25,7 @@ class Popular extends Component {
     const urlBase = `https://image.tmdb.org/t/p/original`;
     const urlBaseBackdrop = `https://image.tmdb.org/t/p/original`;
     if (this.state.loading === true) {
+      console.log("PROPS of NOWPLYaying:", this.props.match.path.split("/"));
       return (
         <div>
           <h1>Loading... </h1>

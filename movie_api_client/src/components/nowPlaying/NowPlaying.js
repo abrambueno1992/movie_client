@@ -31,6 +31,7 @@ class NowPlaying extends Component {
     const urlBase = `https://image.tmdb.org/t/p/w500`;
     const urlBaseBackdrop = `https://image.tmdb.org/t/p/original`;
     console.log("Movies Now Playing: ", this.props.now_playing);
+
     if (this.state.loading === true) {
       return <div>Loading....</div>;
     } else {
@@ -46,6 +47,7 @@ class NowPlaying extends Component {
               `${urlBase + movie.poster_path}`
             );
 
+            console.log("PROPS of NOWPLYaying:", this.props.match.path);
             return (
               <div className="movie-details" key={movie + i}>
                 <h3>Title: {movie.title}</h3>
