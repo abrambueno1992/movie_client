@@ -8,7 +8,7 @@ class NowPlaying extends Component {
   };
 
   render() {
-    console.log("MOvies are: ", this.props.now_playing);
+    console.log("Movies Now Playing: ", this.props.now_playing);
 
     return (
       <div>
