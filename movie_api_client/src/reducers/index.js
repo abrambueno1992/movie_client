@@ -1,5 +1,7 @@
 import { GET_NOW_PLAYING } from "../actions/nowPlaying";
-const initialState = {};
+const initialState = {
+  now_playing: {}
+};
 const movieState = (state = initialState, action) => {
   switch (action.type) {
     case GET_NOW_PLAYING:

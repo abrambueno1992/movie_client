@@ -11,11 +11,15 @@ export const getNowPlaying = () => {
     url: url
   };
   return dispatch => {
-    axios(options).then(response => {
-      dispatch({
-        type: GET_NOW_PLAYING,
-        payload: response
+    axios(options)
+      .then(response => {
+        dispatch({
+          type: GET_NOW_PLAYING,
+          payload: response
+        });
+      })
+      .catch(err => {
+        console.log("ACTION FAILED: ERROR: ", err);
       });
-    });
   };
 };

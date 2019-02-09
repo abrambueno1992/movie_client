@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getNowPlaying } from "../../actions/nowPlaying";
 class NowPlaying extends Component {
+  componentDidMount = () => {
+    this.props.getNowPlaying();
+  };
+
   render() {
+    console.log("MOvies are: ", this.props.now_playing);
+
     return (
       <div>
         <Link to="/popular">Popular</Link>
@@ -15,10 +21,12 @@ class NowPlaying extends Component {
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    now_playing: state.now_playing
+  };
 };
 
 export default connect(
   mapStateToProps,
-  {}
+  { getNowPlaying }
 )(NowPlaying);
