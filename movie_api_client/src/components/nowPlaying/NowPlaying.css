@@ -1,3 +1,5 @@
 .movie-details {
   border: 2px solid blue;
+  display: inline-flex;
+  flex-direction: column;
 }

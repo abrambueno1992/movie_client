@@ -28,7 +28,7 @@ class NowPlaying extends Component {
 
   render() {
     const api_key = process.env.REACT_APP_API_KEY;
-    const urlBase = `https://image.tmdb.org/t/p/original`;
+    const urlBase = `https://image.tmdb.org/t/p/w500`;
     const urlBaseBackdrop = `https://image.tmdb.org/t/p/original`;
     console.log("Movies Now Playing: ", this.props.now_playing);
     if (this.state.loading === true) {
@@ -48,17 +48,19 @@ class NowPlaying extends Component {
 
             return (
               <div className="movie-details" key={movie + i}>
-                <h3>Title: {movie.original_title}</h3>
-                <img src={`${urlBase + movie.poster_path}`} />
-                <img src={`${urlBaseBackdrop + movie.backdrop_path}`} />
-                <div>Summary:</div>
-                <h4>{movie.overview}</h4>
-                <h5>Popularity: {movie.popularity}</h5>
+                <h3>Title: {movie.title}</h3>
+                {/* <h5>Popularity: {movie.popularity}</h5> */}
                 <h5>
-                  Vote Average: {movie.vote_average} out of {movie.vote_count}{" "}
-                  votes
+                  {`Vote Average: ${movie.vote_average} out of ${
+                    movie.vote_count
+                  }
+                  votes`}
                 </h5>
-                <h5>Release Date: {movie.release_date}</h5>
+                <img src={`${urlBase + movie.poster_path}`} />
+                {/* <img src={`${urlBaseBackdrop + movie.backdrop_path}`} /> */}
+                {/* <div>Summary:</div>
+                <h4>{movie.overview}</h4>
+                <h5>Release Date: {movie.release_date}</h5> */}
               </div>
             );
           })}
