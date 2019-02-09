@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-export default class NowPlaying extends Component {
+import { connect } from "react-redux";
+import { getNowPlaying } from "../../actions/nowPlaying";
+class NowPlaying extends Component {
   render() {
     return (
       <div>
@@ -11,3 +13,12 @@ export default class NowPlaying extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  {}
+)(NowPlaying);
