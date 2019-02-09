@@ -40,8 +40,16 @@ class NowPlaying extends Component {
             console.log("Inside, movie title:", movie.original_title);
 
             return (
-              <div class="movie-details" key={movie + i}>
-                <h3>{movie.original_title}</h3>
+              <div className="movie-details" key={movie + i}>
+                <h3>Title: {movie.original_title}</h3>
+                <div>Summary:</div>
+                <h4>{movie.overview}</h4>
+                <h5>Popularity: {movie.popularity}</h5>
+                <h5>
+                  Vote Average: {movie.vote_average} out of {movie.vote_count}{" "}
+                  votes
+                </h5>
+                <h5>Release Date: {movie.release_date}</h5>
               </div>
             );
           })}
