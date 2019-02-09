@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getTopRated } from "../../actions/topRated";
 import { Link } from "react-router-dom";
-
+// css
+import "./TopRated.css";
 class TopRated extends Component {
   constructor(props) {
     super(props);
@@ -23,9 +24,7 @@ class TopRated extends Component {
 
   render() {
     const api_key = process.env.REACT_APP_API_KEY;
-    const urlBase = `https://image.tmdb.org/t/p/original`;
-    const urlBaseBackdrop = `https://image.tmdb.org/t/p/original`;
-    console.log("Top Rated Movies:", this.props.top_rated);
+    const urlBase = `https://image.tmdb.org/t/p/w500`;
     if (this.state.loading === true) {
       return (
         <div>
@@ -40,19 +39,16 @@ class TopRated extends Component {
           <h1>Top Rated</h1>
           {this.props.top_rated.results.map((movie, i) => {
             return (
-              <div key={movie + i}>
+              <Link to={`/${i}`} className="movie-details" key={movie + i}>
                 <h3>Title: {movie.title}</h3>
-                <img src={`${urlBase + movie.poster_path}`} />
-                <img src={`${urlBaseBackdrop + movie.backdrop_path}`} />
-                <div>Summary:</div>
-                <h4>{movie.overview}</h4>
-                <h5>Popularity: {movie.popularity}</h5>
                 <h5>
-                  Vote Average: {movie.vote_average} out of {movie.vote_count}{" "}
-                  votes
+                  {`Vote Average: ${movie.vote_average} out of ${
+                    movie.vote_count
+                  }
+                  votes`}
                 </h5>
-                <h5>Release Date: {movie.release_date}</h5>
-              </div>
+                <img src={`${urlBase + movie.poster_path}`} />
+              </Link>
             );
           })}
         </div>

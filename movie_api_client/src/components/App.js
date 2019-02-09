@@ -34,7 +34,7 @@ class App extends Component {
       <Router className="App">
         <div>
           <Route exact path="/" component={NowPlaying} />
-          <Route exact path="/:id" component={DisplaySelection} />
+          <Route exact path="/now-playing/:id" component={DisplaySelection} />
           <Route exact path="/popular" component={Popular} />
           <Route exact path="/popular/:id" component={DisplaySelection} />
           <Route exact path="/top-rated" component={TopRated} />

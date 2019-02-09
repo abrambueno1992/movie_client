@@ -22,7 +22,7 @@ class Popular extends Component {
 
   render() {
     const api_key = process.env.REACT_APP_API_KEY;
-    const urlBase = `https://image.tmdb.org/t/p/original`;
+    const urlBase = `https://image.tmdb.org/t/p/w500`;
     const urlBaseBackdrop = `https://image.tmdb.org/t/p/original`;
     if (this.state.loading === true) {
       console.log("PROPS of NOWPLYaying:", this.props.match.path.split("/"));
@@ -43,19 +43,16 @@ class Popular extends Component {
           <h1>Popular </h1>
           {this.props.popular.results.map((movie, i) => {
             return (
-              <div key={movie + i}>
+              <Link to={`/${i}`} className="movie-details" key={movie + i}>
                 <h3>Title: {movie.title}</h3>
-                <img src={`${urlBase + movie.poster_path}`} />
-                <img src={`${urlBaseBackdrop + movie.backdrop_path}`} />
-                <div>Summary:</div>
-                <h4>{movie.overview}</h4>
-                <h5>Popularity: {movie.popularity}</h5>
                 <h5>
-                  Vote Average: {movie.vote_average} out of {movie.vote_count}{" "}
-                  votes
+                  {`Vote Average: ${movie.vote_average} out of ${
+                    movie.vote_count
+                  }
+                  votes`}
                 </h5>
-                <h5>Release Date: {movie.release_date}</h5>
-              </div>
+                <img src={`${urlBase + movie.poster_path}`} />
+              </Link>
             );
           })}
         </div>
