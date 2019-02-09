@@ -4,6 +4,8 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    const api_key = process.env.REACT_APP_API_KEY;
+    console.log("api key:", api_key);
     return (
       <div className="App">
         <header className="App-header">
