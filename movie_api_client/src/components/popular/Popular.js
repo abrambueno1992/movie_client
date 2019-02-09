@@ -43,7 +43,11 @@ class Popular extends Component {
           <h1>Popular </h1>
           {this.props.popular.results.map((movie, i) => {
             return (
-              <Link to={`/${i}`} className="movie-details" key={movie + i}>
+              <Link
+                to={`/popular/${i}`}
+                className="movie-details"
+                key={movie + i}
+              >
                 <h3>Title: {movie.title}</h3>
                 <h5>
                   {`Vote Average: ${movie.vote_average} out of ${

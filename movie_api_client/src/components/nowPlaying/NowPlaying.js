@@ -35,7 +35,11 @@ class NowPlaying extends Component {
           <h1>Now Playing</h1>
           {this.props.now_playing.results.map((movie, i) => {
             return (
-              <Link to={`/${i}`} className="movie-details" key={movie + i}>
+              <Link
+                to={`/now-playing/${i}`}
+                className="movie-details"
+                key={movie + i}
+              >
                 <h3>Title: {movie.title}</h3>
                 <h5>
                   {`Vote Average: ${movie.vote_average} out of ${

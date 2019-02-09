@@ -39,7 +39,11 @@ class TopRated extends Component {
           <h1>Top Rated</h1>
           {this.props.top_rated.results.map((movie, i) => {
             return (
-              <Link to={`/${i}`} className="movie-details" key={movie + i}>
+              <Link
+                to={`/top-rated/${i}`}
+                className="movie-details"
+                key={movie + i}
+              >
                 <h3>Title: {movie.title}</h3>
                 <h5>
                   {`Vote Average: ${movie.vote_average} out of ${
