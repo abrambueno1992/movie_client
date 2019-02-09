@@ -18,10 +18,6 @@ class NowPlaying extends Component {
   };
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.now_playing !== this.props.now_playing) {
-      this.props.now_playing.results.forEach((movie, i) => {
-        // this.setState({})
-        console.log("movie", movie);
-      });
       this.setState({ loading: false });
     }
   }
@@ -29,8 +25,6 @@ class NowPlaying extends Component {
   render() {
     const api_key = process.env.REACT_APP_API_KEY;
     const urlBase = `https://image.tmdb.org/t/p/w500`;
-    const urlBaseBackdrop = `https://image.tmdb.org/t/p/original`;
-    console.log("Movies Now Playing: ", this.props.now_playing);
 
     if (this.state.loading === true) {
       return <div>Loading....</div>;
@@ -41,17 +35,9 @@ class NowPlaying extends Component {
           <Link to="/top-rated">Top Rated</Link>
           <h1>Now Playing</h1>
           {this.props.now_playing.results.map((movie, i) => {
-            console.log(
-              "Inside, movie title:",
-              movie.original_title,
-              `${urlBase + movie.poster_path}`
-            );
-
-            console.log("PROPS of NOWPLYaying:", this.props.match.path);
             return (
               <div className="movie-details" key={movie + i}>
                 <h3>Title: {movie.title}</h3>
-                {/* <h5>Popularity: {movie.popularity}</h5> */}
                 <h5>
                   {`Vote Average: ${movie.vote_average} out of ${
                     movie.vote_count
@@ -59,10 +45,6 @@ class NowPlaying extends Component {
                   votes`}
                 </h5>
                 <img src={`${urlBase + movie.poster_path}`} />
-                {/* <img src={`${urlBaseBackdrop + movie.backdrop_path}`} /> */}
-                {/* <div>Summary:</div>
-                <h4>{movie.overview}</h4>
-                <h5>Release Date: {movie.release_date}</h5> */}
               </div>
             );
           })}
