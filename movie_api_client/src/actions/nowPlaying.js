@@ -15,7 +15,7 @@ export const getNowPlaying = () => {
       .then(response => {
         dispatch({
           type: GET_NOW_PLAYING,
-          payload: response
+          payload: response.data
         });
       })
       .catch(err => {
