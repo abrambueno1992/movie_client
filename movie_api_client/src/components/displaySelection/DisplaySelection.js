@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getTopRated } from "../../actions/topRated";
+import { getNowPlaying } from "../../actions/nowPlaying";
+import { getPopular } from "../../actions/popular";
+import { Link } from "react-router-dom";
 
-export default class DisplaySelection extends Component {
+class DisplaySelection extends Component {
   render() {
     const movie_index = this.props.match.url.split("/")[
       this.props.match.url.split("/").length - 1
@@ -13,3 +18,10 @@ export default class DisplaySelection extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {};
+};
+export default connect(
+  mapStateToProps,
+  { getNowPlaying, getTopRated, getPopular }
+)(DisplaySelection);
