@@ -14,7 +14,7 @@ export const getTopRated = () => {
       .then(response => {
         dispatch({
           type: GET_TOP_RATED,
-          payload: response
+          payload: response.data
         });
       })
       .catch(err => {

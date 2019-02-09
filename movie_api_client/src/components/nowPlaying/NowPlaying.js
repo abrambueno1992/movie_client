@@ -37,7 +37,7 @@ class NowPlaying extends Component {
       return (
         <div>
           <Link to="/popular">Popular</Link>
-          <Link to="top-rated">Top Rated</Link>
+          <Link to="/top-rated">Top Rated</Link>
           <h1>Now Playing</h1>
           {this.props.now_playing.results.map((movie, i) => {
             console.log(

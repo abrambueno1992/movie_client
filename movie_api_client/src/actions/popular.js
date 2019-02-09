@@ -13,7 +13,7 @@ export const getPopular = () => {
       .then(response => {
         dispatch({
           type: GET_POPULAR,
-          payload: response
+          payload: response.data
         });
       })
       .catch(err => {
