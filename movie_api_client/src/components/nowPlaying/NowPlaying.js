@@ -8,8 +8,7 @@ class NowPlaying extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
-      movies: []
+      loading: true
     };
   }
 
@@ -36,7 +35,7 @@ class NowPlaying extends Component {
           <h1>Now Playing</h1>
           {this.props.now_playing.results.map((movie, i) => {
             return (
-              <div className="movie-details" key={movie + i}>
+              <Link to={`/${i}`} className="movie-details" key={movie + i}>
                 <h3>Title: {movie.title}</h3>
                 <h5>
                   {`Vote Average: ${movie.vote_average} out of ${
@@ -45,7 +44,7 @@ class NowPlaying extends Component {
                   votes`}
                 </h5>
                 <img src={`${urlBase + movie.poster_path}`} />
-              </div>
+              </Link>
             );
           })}
         </div>
