@@ -27,6 +27,8 @@ class NowPlaying extends Component {
   }
 
   render() {
+    const api_key = process.env.REACT_APP_API_KEY;
+    const urlBase = `https://image.tmdb.org/t/p/original`;
     console.log("Movies Now Playing: ", this.props.now_playing);
     if (this.state.loading === true) {
       return <div>Loading....</div>;
@@ -37,11 +39,16 @@ class NowPlaying extends Component {
           <Link to="top-rated">Top Rated</Link>
           <h1>Now Playing</h1>
           {this.props.now_playing.results.map((movie, i) => {
-            console.log("Inside, movie title:", movie.original_title);
+            console.log(
+              "Inside, movie title:",
+              movie.original_title,
+              `${urlBase + movie.poster_path}`
+            );
 
             return (
               <div className="movie-details" key={movie + i}>
                 <h3>Title: {movie.original_title}</h3>
+                <img src={`${urlBase + movie.poster_path}`} />
                 <div>Summary:</div>
                 <h4>{movie.overview}</h4>
                 <h5>Popularity: {movie.popularity}</h5>
