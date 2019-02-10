@@ -7,6 +7,7 @@ import NowPlaying from "./nowPlaying/NowPlaying";
 import Popular from "./popular/Popular";
 import TopRated from "./topRated/TopRated";
 import DisplaySelection from "./displaySelection/DisplaySelection";
+import Search from "./search/Search";
 // import logo from './logo.svg';
 import "./App.css";
 
@@ -39,6 +40,7 @@ class App extends Component {
           <Route exact path="/popular/:id" component={DisplaySelection} />
           <Route exact path="/top-rated" component={TopRated} />
           <Route exact path="/top-rated/:id" component={DisplaySelection} />
+          <Route exact path="/search" component={Search} />
         </div>
       </Router>
     );
