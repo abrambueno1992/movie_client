@@ -67,9 +67,7 @@ class DisplaySelection extends Component {
     ];
     const movie_index = parseInt(index, 10);
     const api_key = process.env.REACT_APP_API_KEY;
-    const urlBase = `https://image.tmdb.org/t/p/original`;
-    const urlBaseBackdrop = `https://image.tmdb.org/t/p/original`;
-    console.log("PROPS of NOWPLYaying:", movie_index);
+    const urlBaseBackdrop = `https://image.tmdb.org/t/p/w1280`;
     if (this.state.selection === "") {
       return (
         <div>
@@ -82,11 +80,7 @@ class DisplaySelection extends Component {
         <div>
           <h1>Display selection</h1>
 
-          {/* {this.state.selection.results.map((movie, i) => { */}
-          {/* return ( */}
-          {/* <div key={movie + i}> */}
           <h3>Title: {movie.title}</h3>
-          {/* <img src={`${urlBase + movie.poster_path}`} /> */}
           <img src={`${urlBaseBackdrop + movie.backdrop_path}`} />
           <div>Summary:</div>
           <h4>{movie.overview}</h4>
@@ -95,9 +89,6 @@ class DisplaySelection extends Component {
             Vote Average: {movie.vote_average} out of {movie.vote_count} votes
           </h5>
           <h5>Release Date: {movie.release_date}</h5>
-          {/* </div> */}
-          {/* ); */}
-          {/* })} */}
         </div>
       );
     }
