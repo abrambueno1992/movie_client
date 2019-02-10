@@ -22,18 +22,17 @@ const styles = theme => ({
     padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`
   },
   button: {
-    margin: theme.spacing.unit
+    margin: theme.spacing.unit,
+    width: "10%"
   },
   input: {
     display: "none"
-  }
-});
-const btnStyles = theme => ({
-  button: {
-    margin: theme.spacing.unit
   },
-  input: {
-    display: "none"
+  inputStyle: {
+    width: "40%",
+    marginLeft: "25%",
+    marginTop: "1%",
+    border: "1px solid black"
   }
 });
 
@@ -119,6 +118,7 @@ class CustomSeparator extends Component {
           <Input
             type="text"
             value={this.state.search}
+            className={classes.inputStyle}
             onChange={this.handleInput}
             placeholder="Search for a movie"
             fullWidth={true}

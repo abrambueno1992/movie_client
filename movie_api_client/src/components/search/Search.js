@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { searchMovie } from "../../actions/search";
+import Navigation from "../navigation/Navigation";
 // css
 import "./Search.css";
 class Search extends Component {
@@ -33,6 +34,7 @@ class Search extends Component {
       return (
         <div>
           <h3>Search component</h3>
+          <Navigation value={0} history={this.props} />
           {this.props.search.results.map((movie, i) => {
             return (
               <Link
