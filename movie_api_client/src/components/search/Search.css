@@ -1,0 +1,8 @@
+.movie-details-search {
+  border: 2px solid blue;
+  display: inline-flex;
+  flex-direction: row;
+  width: 50%;
+  margin-left: 25%;
+  height: 100%;
+}

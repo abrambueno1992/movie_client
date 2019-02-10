@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { searchMovie } from "../../actions/search";
-
+// css
+import "./Search.css";
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -36,22 +37,13 @@ class Search extends Component {
             return (
               <Link
                 to={`/now-playing/${i}`}
-                className="movie-details"
+                className="movie-details-search"
                 key={movie + i}
               >
-                <h3>Title: {movie.title}</h3>
-                <h5>
-                  {`Vote Average: ${movie.vote_average} out of ${
-                    movie.vote_count
-                  }
-                  votes`}
-                </h5>
-                <img
-                  style={{ width: "50%", height: "50%" }}
-                  src={`${urlBase + movie.poster_path}`}
-                />
+                <img src={`${urlBase + movie.poster_path}`} />
+                <h2>Title: {movie.title}</h2>
                 <div>Summary:</div>
-                <div>{movie.overview}</div>
+                <span>{movie.overview}</span>
               </Link>
             );
           })}
