@@ -28,8 +28,8 @@ class NowPlaying extends Component {
   };
   handleSubmit = () => {
     this.props.searchMovie(this.state.search);
+    this.props.history.push(`/search/${this.state.search}`);
     this.setState({ search: "" });
-    this.props.history.push("/search");
   };
   render() {
     const api_key = process.env.REACT_APP_API_KEY;
