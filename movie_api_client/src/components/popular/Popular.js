@@ -39,7 +39,7 @@ class Popular extends Component {
       });
       return (
         <div>
-          <Navigation value={2} />
+          <Navigation value={2} history={this.props} />
           <h1>Popular </h1>
           {this.props.popular.results.map((movie, i) => {
             return (
