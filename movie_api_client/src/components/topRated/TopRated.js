@@ -23,7 +23,6 @@ class TopRated extends Component {
   }
 
   render() {
-    const api_key = process.env.REACT_APP_API_KEY;
     const urlBase = `https://image.tmdb.org/t/p/w500`;
     if (this.state.loading === true) {
       return (

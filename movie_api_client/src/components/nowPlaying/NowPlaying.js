@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getNowPlaying } from "../../actions/nowPlaying";
 import { searchMovie } from "../../actions/search";
+// material ui
+import Input from "@material-ui/core/Input";
+// Navigation
+import Navigation from "../navigation/Navigation.js";
 // css
 import "./NowPlaying.css";
 class NowPlaying extends Component {
@@ -32,7 +36,6 @@ class NowPlaying extends Component {
     this.setState({ search: "" });
   };
   render() {
-    const api_key = process.env.REACT_APP_API_KEY;
     const urlBase = `https://image.tmdb.org/t/p/w500`;
 
     if (this.state.loading === true) {
@@ -42,11 +45,13 @@ class NowPlaying extends Component {
         <div>
           <Link to="/popular">Popular</Link>
           <Link to="/top-rated">Top Rated</Link>
-          <input
+          <Navigation />
+          <Input
             type="text"
             value={this.state.search}
             onChange={this.handleInput}
             placeholder="Search for a movie"
+            fullWidth={true}
           />
           <button onClick={this.handleSubmit}>Search </button>
           <h1>Now Playing</h1>

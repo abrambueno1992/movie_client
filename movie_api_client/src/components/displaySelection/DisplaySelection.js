@@ -17,7 +17,6 @@ class DisplaySelection extends Component {
   }
 
   componentDidMount() {
-    // console.log("history prop", this.props.match.url.split("/"));
     const path = this.props.match.url.split("/")[1];
     if (path === "popular") {
       if (this.props.popular !== null) {
@@ -66,7 +65,6 @@ class DisplaySelection extends Component {
       this.props.match.url.split("/").length - 1
     ];
     const movie_index = parseInt(index, 10);
-    const api_key = process.env.REACT_APP_API_KEY;
     const urlBaseBackdrop = `https://image.tmdb.org/t/p/w1280`;
     if (this.state.selection === "") {
       return (

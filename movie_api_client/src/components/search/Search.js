@@ -22,7 +22,6 @@ class Search extends Component {
 
   render() {
     const query = this.props.match.url.split("/")[2];
-    const api_key = process.env.REACT_APP_API_KEY;
     const urlBase = `https://image.tmdb.org/t/p/w500`;
     if (this.props.search === null) {
       return (
