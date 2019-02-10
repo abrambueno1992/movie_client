@@ -8,6 +8,11 @@ import Link from "@material-ui/core/Link";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
+
+// redux
+import { connect } from "react-redux";
+import { searchMovie } from "../../actions/search";
+
 const styles = theme => ({
   root: {
     justifyContent: "center",
@@ -54,14 +59,13 @@ class CustomSeparator extends Component {
   };
   handleSubmit = () => {
     this.props.searchMovie(this.state.search);
-    this.props.history.push(`/search/${this.state.search}`);
+    this.props.history.history.push(`/search/${this.state.search}`);
     this.setState({
       search: ""
     });
   };
   handleClick = e => {
     const value = !e.target.value;
-    // e.preventDefault();
     this.setState({ [e.target.name]: value });
   };
   render() {
@@ -69,7 +73,7 @@ class CustomSeparator extends Component {
     const nowPlayingColor = this.props.value === 1 ? "textPrimary" : "inherit";
     const popularColor = this.props.value === 2 ? "textPrimary" : "inherit";
     const topRatedColor = this.props.value === 3 ? "textPrimary" : "inherit";
-    console.log("What is the color?: ", this.props.value);
+    console.log("What is the color?: ", this.props);
 
     return (
       <div>
@@ -123,6 +127,7 @@ class CustomSeparator extends Component {
             variant="contained"
             color="primary"
             className={classes.button}
+            onClick={this.handleSubmit}
           >
             Primary
           </Button>
@@ -135,5 +140,12 @@ class CustomSeparator extends Component {
 CustomSeparator.propTypes = {
   classes: PropTypes.object.isRequired
 };
-
-export default withStyles(styles)(CustomSeparator);
+const mapStateToProps = state => {
+  return {
+    search: state.search
+  };
+};
+export default connect(
+  mapStateToProps,
+  { searchMovie }
+)(withStyles(styles)(CustomSeparator));

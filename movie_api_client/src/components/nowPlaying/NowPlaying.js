@@ -32,7 +32,7 @@ class NowPlaying extends Component {
     } else {
       return (
         <div>
-          <Navigation value={1} />
+          <Navigation value={1} history={this.props} />
           <h1>Now Playing</h1>
           {this.props.now_playing.results.map((movie, i) => {
             return (
