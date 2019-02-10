@@ -1,0 +1,20 @@
+.display-selection {
+  display: inline-flex;
+  flex-direction: column;
+  align-self: center;
+  /* text-align: center; */
+}
+.overview {
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.meta-details {
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 0.5em;
+}
+.img-display {
+  width: 100%;
+}

@@ -5,7 +5,8 @@ import { getNowPlaying } from "../../actions/nowPlaying";
 import { getPopular } from "../../actions/popular";
 import { searchMovie } from "../../actions/search";
 import { Link } from "react-router-dom";
-
+import Navigation from "../navigation/Navigation";
+import "./DisplaySelection.css";
 class DisplaySelection extends Component {
   constructor(props) {
     super(props);
@@ -75,18 +76,22 @@ class DisplaySelection extends Component {
     } else {
       const movie = this.state.selection.results[movie_index];
       return (
-        <div>
-          <h1>Display selection</h1>
+        <div className="display-selection">
+          <Navigation history={this.props} />
+          {/* <h1>Display selection</h1> */}
 
-          <h3>Title: {movie.title}</h3>
-          <img src={`${urlBaseBackdrop + movie.backdrop_path}`} />
-          <div>Summary:</div>
-          <h4>{movie.overview}</h4>
-          <h5>Popularity: {movie.popularity}</h5>
-          <h5>
+          <h1 className="meta-details">{movie.title}</h1>
+          <img
+            className="img-display"
+            src={`${urlBaseBackdrop + movie.backdrop_path}`}
+          />
+          <h2 className="meta-details">Summary:</h2>
+          <div className="overview">{movie.overview}</div>
+          <div className="meta-details">Popularity: {movie.popularity}</div>
+          <div className="meta-details">
             Vote Average: {movie.vote_average} out of {movie.vote_count} votes
-          </h5>
-          <h5>Release Date: {movie.release_date}</h5>
+          </div>
+          <div className="meta-details">Release Date: {movie.release_date}</div>
         </div>
       );
     }

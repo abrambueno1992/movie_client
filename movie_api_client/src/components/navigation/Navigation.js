@@ -31,6 +31,7 @@ const styles = theme => ({
   inputStyle: {
     width: "40%",
     marginLeft: "25%",
+    background: "white",
     marginTop: "1%",
     border: "1px solid black"
   }
@@ -129,7 +130,7 @@ class CustomSeparator extends Component {
             className={classes.button}
             onClick={this.handleSubmit}
           >
-            Primary
+            Search
           </Button>
         </div>
       </div>
