@@ -43,9 +43,11 @@ class Search extends Component {
                 key={movie + i}
               >
                 <img src={`${urlBase + movie.poster_path}`} />
-                <h2>Title: {movie.title}</h2>
-                <div>Summary:</div>
-                <span>{movie.overview}</span>
+                <div>
+                  <h2 className="meta-details-search">Title: {movie.title}</h2>
+                  <div className="meta-details-search">Summary:</div>
+                  <div className="overview-search">{movie.overview}</div>
+                </div>
               </Link>
             );
           })}

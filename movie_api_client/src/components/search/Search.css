@@ -6,4 +6,12 @@
   width: 50%;
   margin-left: 25%;
   height: 100%;
+  margin-bottom: 2%;
+}
+.meta-details-search {
+  text-align: center;
+}
+.overview-search {
+  font-weight: bold;
+  font-size: 1.2em;
 }
