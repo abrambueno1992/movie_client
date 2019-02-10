@@ -30,6 +30,15 @@ class Search extends Component {
           <h3>Loading...</h3>
         </div>
       );
+    } else if (this.props.search.results.length === 0) {
+      console.log("NO RESULTS, EMPTY ARRAY RESULT");
+
+      return (
+        <div style={{ color: "white" }}>
+          <Navigation value={0} history={this.props} />
+          <h1>No Results for {query}</h1>
+        </div>
+      );
     } else {
       return (
         <div>
