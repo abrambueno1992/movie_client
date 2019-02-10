@@ -42,7 +42,6 @@ class Search extends Component {
     } else {
       return (
         <div>
-          <h3>Search component</h3>
           <Navigation value={0} history={this.props} />
           {this.props.search.results.map((movie, i) => {
             return (

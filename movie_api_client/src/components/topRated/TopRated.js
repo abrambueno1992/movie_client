@@ -35,8 +35,6 @@ class TopRated extends Component {
       return (
         <div>
           <Navigation value={3} history={this.props} />
-          <h1>Top Rated</h1>
-
           {this.props.top_rated.results.map((movie, i) => {
             return (
               <Link

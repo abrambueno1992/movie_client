@@ -26,21 +26,15 @@ class Popular extends Component {
     const urlBase = `https://image.tmdb.org/t/p/w500`;
     const urlBaseBackdrop = `https://image.tmdb.org/t/p/original`;
     if (this.state.loading === true) {
-      console.log("PROPS of NOWPLYaying:", this.props.match.path.split("/"));
       return (
         <div>
           <h1>Loading... </h1>
         </div>
       );
     } else {
-      console.log("Popular Movies: ", this.props.popular.results);
-      this.props.popular.results.forEach(element => {
-        console.log("each", element);
-      });
       return (
         <div>
           <Navigation value={2} history={this.props} />
-          <h1>Popular </h1>
           {this.props.popular.results.map((movie, i) => {
             return (
               <Link
