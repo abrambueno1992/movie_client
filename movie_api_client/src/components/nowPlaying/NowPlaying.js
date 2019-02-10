@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getNowPlaying } from "../../actions/nowPlaying";
 import { searchMovie } from "../../actions/search";
-// material ui
-import Input from "@material-ui/core/Input";
 // Navigation
 import Navigation from "../navigation/Navigation.js";
 // css
@@ -13,8 +11,7 @@ class NowPlaying extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
-      search: ""
+      loading: true
     };
   }
 
@@ -27,14 +24,6 @@ class NowPlaying extends Component {
     }
   }
 
-  handleInput = e => {
-    this.setState({ search: e.target.value });
-  };
-  handleSubmit = () => {
-    this.props.searchMovie(this.state.search);
-    this.props.history.push(`/search/${this.state.search}`);
-    this.setState({ search: "" });
-  };
   render() {
     const urlBase = `https://image.tmdb.org/t/p/w500`;
 
@@ -46,14 +35,6 @@ class NowPlaying extends Component {
           <Link to="/popular">Popular</Link>
           <Link to="/top-rated">Top Rated</Link>
           <Navigation />
-          <Input
-            type="text"
-            value={this.state.search}
-            onChange={this.handleInput}
-            placeholder="Search for a movie"
-            fullWidth={true}
-          />
-          <button onClick={this.handleSubmit}>Search </button>
           <h1>Now Playing</h1>
           {this.props.now_playing.results.map((movie, i) => {
             return (
