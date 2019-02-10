@@ -57,7 +57,7 @@ class DisplaySelection extends Component {
       this.setState({ selection: this.props.now_playing });
     }
     if (prevProps.search !== this.props.search) {
-      this.setState({ search: this.props.search });
+      this.setState({ selection: this.props.search });
     }
   }
 
