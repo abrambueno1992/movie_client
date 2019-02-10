@@ -1,6 +1,7 @@
 .movie-details-search {
-  border: 2px solid blue;
+  border: 2px solid red;
   display: inline-flex;
+  color: white;
   flex-direction: row;
   width: 50%;
   margin-left: 25%;
