@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getPopular } from "../../actions/popular";
 import { Link } from "react-router-dom";
+import Navigation from "../navigation/Navigation";
 class Popular extends Component {
   constructor(props) {
     super(props);
@@ -38,8 +39,7 @@ class Popular extends Component {
       });
       return (
         <div>
-          <Link to="/">Now Playing</Link>
-          <Link to="top-rated">Top Rated</Link>
+          <Navigation value={2} />
           <h1>Popular </h1>
           {this.props.popular.results.map((movie, i) => {
             return (

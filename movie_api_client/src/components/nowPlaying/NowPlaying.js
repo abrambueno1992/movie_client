@@ -32,9 +32,7 @@ class NowPlaying extends Component {
     } else {
       return (
         <div>
-          <Link to="/popular">Popular</Link>
-          <Link to="/top-rated">Top Rated</Link>
-          <Navigation />
+          <Navigation value={1} />
           <h1>Now Playing</h1>
           {this.props.now_playing.results.map((movie, i) => {
             return (

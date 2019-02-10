@@ -42,7 +42,10 @@ class CustomSeparator extends Component {
     super(props);
 
     this.state = {
-      search: ""
+      search: "",
+      nowPlaying: true,
+      topRated: false,
+      popular: false
     };
   }
 
@@ -52,13 +55,22 @@ class CustomSeparator extends Component {
   handleSubmit = () => {
     this.props.searchMovie(this.state.search);
     this.props.history.push(`/search/${this.state.search}`);
-    this.setState({ search: "" });
+    this.setState({
+      search: ""
+    });
   };
   handleClick = e => {
-    e.preventDefault();
+    const value = !e.target.value;
+    // e.preventDefault();
+    this.setState({ [e.target.name]: value });
   };
   render() {
     const { classes } = this.props;
+    const nowPlayingColor = this.props.value === 1 ? "textPrimary" : "inherit";
+    const popularColor = this.props.value === 2 ? "textPrimary" : "inherit";
+    const topRatedColor = this.props.value === 3 ? "textPrimary" : "inherit";
+    console.log("What is the color?: ", this.props.value);
+
     return (
       <div>
         <div className={classes.root}>
@@ -67,16 +79,35 @@ class CustomSeparator extends Component {
               separator={<NavigateNextIcon fontSize="large" />}
               arial-label="Breadcrumb"
             >
-              <Link color="inherit" href="/" onClick={handleClick}>
-                Material-UI
+              <Link
+                color={nowPlayingColor}
+                value={this.state.nowPlaying}
+                name="nowPlaying"
+                href="/"
+                onClick={this.handleClick}
+              >
+                Now Playing
               </Link>
-              <Link color="inherit" href="/lab/about/" onClick={handleClick}>
-                Lab
+              <Link
+                color={popularColor}
+                // color="textPrimary"
+                value={this.state.popular}
+                name="popular"
+                href="/popular"
+                onClick={this.handleClick}
+              >
+                Popular
               </Link>
-              <Link color="inherit" href="/lab/about/" onClick={handleClick}>
-                Breadcrumb
+              <Link
+                color={topRatedColor}
+                href="/top-rated"
+                name="topRated"
+                value={this.state.topRated}
+                onClick={this.handleClick}
+              >
+                Top Rated
               </Link>
-              <Typography color="textPrimary">Breadcrumb</Typography>
+              {/* <Typography color="textPrimary">Breadcrumb</Typography> */}
             </Breadcrumbs>
           </Paper>
         </div>

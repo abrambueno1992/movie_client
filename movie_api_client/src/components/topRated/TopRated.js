@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getTopRated } from "../../actions/topRated";
 import { Link } from "react-router-dom";
+import Navigation from "../navigation/Navigation";
 // css
 import "./TopRated.css";
 class TopRated extends Component {
@@ -33,9 +34,9 @@ class TopRated extends Component {
     } else {
       return (
         <div>
-          <Link to="/popular">Popular</Link>
-          <Link to="/">Now Playing</Link>
+          <Navigation value={3} />
           <h1>Top Rated</h1>
+
           {this.props.top_rated.results.map((movie, i) => {
             return (
               <Link
