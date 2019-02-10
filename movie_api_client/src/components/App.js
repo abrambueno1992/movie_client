@@ -41,6 +41,11 @@ class App extends Component {
           <Route exact path="/top-rated" component={TopRated} />
           <Route exact path="/top-rated/:id" component={DisplaySelection} />
           <Route exact path="/search/:query" component={Search} />
+          <Route
+            exact
+            path="/search/:query/result/:id"
+            component={DisplaySelection}
+          />
         </div>
       </Router>
     );

@@ -21,6 +21,7 @@ class Search extends Component {
   }
 
   render() {
+    const query = this.props.match.url.split("/")[2];
     const api_key = process.env.REACT_APP_API_KEY;
     const urlBase = `https://image.tmdb.org/t/p/w500`;
     if (this.props.search === null) {
@@ -36,7 +37,7 @@ class Search extends Component {
           {this.props.search.results.map((movie, i) => {
             return (
               <Link
-                to={`/now-playing/${i}`}
+                to={`/search/${query}/result/${i}`}
                 className="movie-details-search"
                 key={movie + i}
               >
