@@ -34,22 +34,3 @@ export const getTopRated = () => {
       .catch(ex => dispatch(fetchTodosFailure(ex)));
   };
 };
-// export const getTopRated = () => {
-//   const options = {
-//     method: "GET",
-//     header: { "content-type": "application/json" },
-//     url: url
-//   };
-//   return dispatch => {
-//     axios(options)
-//       .then(response => {
-//         dispatch({
-//           type: GET_TOP_RATED,
-//           payload: response.data
-//         });
-//       })
-//       .catch(err => {
-//         console.log("ACTION FAILED: ERROR: ", err);
-//       });
-//   };
-// };

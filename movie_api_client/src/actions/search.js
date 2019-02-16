@@ -25,53 +25,6 @@ function fetchTodosFailure(ex) {
   };
 }
 
-// return dispatch => {
-//   return fetch('/users.json') // Some async action with promise
-//     .then(() => dispatch(success()))
-// };
-// function fetchData() {
-//   const options = {
-//     method: "GET",
-//     header: { "content-type": "application/json" },
-//     url: url + search_string
-//   };
-//   return dispatch => {
-//     axios(options)
-//       .then(response => {
-//         console.log("Response from the search:", response.data);
-
-//         dispatch({
-//           type: SEARCH_MOVIE,
-//           payload: response.data
-//         });
-//       })
-//       .catch(err => {
-//         console.log("ACTION FAILED: ERROR: ", err);
-//       });
-//   };
-// }
-
-// export const searchMovie = search_string => {
-//   const options = {
-//     method: "GET",
-//     header: { "content-type": "application/json" },
-//     url: url + search_string
-//   };
-//   return dispatch => {
-//     axios(options)
-//       .then(response => {
-//         console.log("Response from the search:", response.data);
-
-//         dispatch({
-//           type: SEARCH_MOVIE,
-//           payload: response.data
-//         });
-//       })
-//       .catch(err => {
-//         console.log("ACTION FAILED: ERROR: ", err);
-//       });
-//   };
-// };
 export const searchMovie = (search_string = "") => {
   return dispatch => {
     dispatch(fetchTodosRequest());

@@ -45,7 +45,3 @@ describe("async actions", () => {
   });
 });
 
-// describe("getTopRated", () => {
-//   const action = getTopRated();
-//   expect(action.type).toEqual(GET_TOP_RATED);
-// });

@@ -33,23 +33,3 @@ export const getNowPlaying = () => {
       .catch(ex => dispatch(fetchTodosFailure(ex)));
   };
 };
-
-// export const getNowPlaying = () => {
-//   const options = {
-//     method: "GET",
-//     header: { "content-type": "application/json" },
-//     url: url
-//   };
-//   return dispatch => {
-//     axios(options)
-//       .then(response => {
-//         dispatch({
-//           type: GET_NOW_PLAYING,
-//           payload: response.data
-//         });
-//       })
-//       .catch(err => {
-//         console.log("ACTION FAILED: ERROR: ", err);
-//       });
-//   };
-// };

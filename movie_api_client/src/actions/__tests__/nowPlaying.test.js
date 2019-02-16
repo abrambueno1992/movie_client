@@ -49,9 +49,3 @@ describe("async actions", () => {
   });
 });
 
-// describe("getNowPlaying", () => {
-//   it("it has the correct type", () => {
-//     const action = getNowPlaying();
-//     expect(action.type).toEqual(GET_NOW_PLAYING);
-//   });
-// });
