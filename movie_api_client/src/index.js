@@ -1,21 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
-// redux
-// import reducers from "./reducers";
-// import { Provider } from "react-redux";
-// import { createStore, applyMiddleware } from "redux";
-
 // Root from Root.js
 import Root from "./Root";
-
-// dev tools
-// import { composeWithDevTools } from "redux-devtools-extension";
-
-// const store = createStore(reducers, composeWithDevTools());
 
 ReactDOM.render(
   <Root>
