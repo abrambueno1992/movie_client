@@ -1,35 +1,55 @@
 import axios from "axios";
-
+import "cross-fetch/polyfill";
 export const GET_NOW_PLAYING = "GET_NOW_PLAYING";
-export const CHOOSE_MOVIE = "CHOOSE_MOVIE";
+export const GET_NOW_PLAYING_REQUEST = "GET_NOW_PLAYING_REQUEST";
 const api_key = process.env.REACT_APP_API_KEY;
 const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US&page=1`;
 
-export const getNowPlaying = () => {
-  const options = {
-    method: "GET",
-    header: { "content-type": "application/json" },
-    url: url
+function fetchTodosRequest() {
+  return {
+    type: GET_NOW_PLAYING_REQUEST
   };
+}
+
+function fetchTodosSuccess(body) {
+  return {
+    type: GET_NOW_PLAYING,
+    payload: body
+  };
+}
+function fetchTodosFailure(ex) {
+  return {
+    type: "FETCH_TODOS_FAILURE",
+    ex
+  };
+}
+
+export const getNowPlaying = () => {
   return dispatch => {
-    axios(options)
-      .then(response => {
-        dispatch({
-          type: GET_NOW_PLAYING,
-          payload: response.data
-        });
-      })
-      .catch(err => {
-        console.log("ACTION FAILED: ERROR: ", err);
-      });
+    dispatch(fetchTodosRequest());
+    return fetch(url)
+      .then(res => res.json())
+      .then(body => dispatch(fetchTodosSuccess(body)))
+      .catch(ex => dispatch(fetchTodosFailure(ex)));
   };
 };
 
-export const movieDetailsNP = index => {
-  return dispatch => {
-    dispatch({
-      type: CHOOSE_MOVIE,
-      payload: index
-    });
-  };
-};
+// export const getNowPlaying = () => {
+//   const options = {
+//     method: "GET",
+//     header: { "content-type": "application/json" },
+//     url: url
+//   };
+//   return dispatch => {
+//     axios(options)
+//       .then(response => {
+//         dispatch({
+//           type: GET_NOW_PLAYING,
+//           payload: response.data
+//         });
+//       })
+//       .catch(err => {
+//         console.log("ACTION FAILED: ERROR: ", err);
+//       });
+//   };
+// };

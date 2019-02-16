@@ -1,4 +1,4 @@
-import { GET_NOW_PLAYING, CHOOSE_MOVIE } from "../actions/nowPlaying";
+import { GET_NOW_PLAYING } from "../actions/nowPlaying";
 import { GET_TOP_RATED } from "../actions/topRated";
 import { GET_POPULAR } from "../actions/popular";
 import { SEARCH_MOVIE } from "../actions/search";
@@ -16,10 +16,6 @@ const movieState = (state = initialState, action) => {
         now_playing: action.payload
       });
       break;
-    case CHOOSE_MOVIE:
-      return Object.assign({}, state, {
-        movie_index: action.payload
-      });
     case GET_TOP_RATED:
       return Object.assign({}, state, {
         top_rated: action.payload
