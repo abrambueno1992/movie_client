@@ -1,13 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import App from "../App";
 import { shallow } from "enzyme";
-import Controller from "../Controller";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
+let wrapped;
 beforeEach(() => {
   wrapped = shallow(<App />);
 });
 
-it("shows a controller component", () => {
-  expect(wrapped.find(Controller).length).toEqual(1);
+it("shows a Router wrapper", () => {
+  expect(wrapped.find(Router).length).toEqual(1);
+});
+
+it("shows the correct number of routes", () => {
+  expect(wrapped.find(Route).length).toEqual(8);
 });
