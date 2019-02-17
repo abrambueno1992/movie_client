@@ -76,7 +76,7 @@ class CustomSeparator extends Component {
     console.log("What is the color?: ", this.props);
 
     return (
-      <div>
+      <div className="testingNavigation">
         <div className={classes.root}>
           <Paper className={classes.paper}>
             <Breadcrumbs

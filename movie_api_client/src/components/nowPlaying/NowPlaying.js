@@ -16,8 +16,13 @@ class NowPlaying extends Component {
   }
 
   componentDidMount = () => {
+    this.fetchData();
+  };
+
+  fetchData = () => {
     this.props.getNowPlaying();
   };
+
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.now_playing !== this.props.now_playing) {
       this.setState({ loading: false });
@@ -26,9 +31,8 @@ class NowPlaying extends Component {
 
   render() {
     const urlBase = `https://image.tmdb.org/t/p/w500`;
-
     if (this.state.loading === true) {
-      return <div>Loading....</div>;
+      return <div className="testing">Loading....</div>;
     } else {
       return (
         <div>

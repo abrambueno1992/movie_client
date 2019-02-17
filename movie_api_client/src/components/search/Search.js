@@ -26,7 +26,7 @@ class Search extends Component {
     const urlBase = `https://image.tmdb.org/t/p/w500`;
     if (this.props.search === null) {
       return (
-        <div>
+        <div className="testingSearch">
           <h3>Loading...</h3>
         </div>
       );
@@ -34,14 +34,14 @@ class Search extends Component {
       console.log("NO RESULTS, EMPTY ARRAY RESULT");
 
       return (
-        <div style={{ color: "white" }}>
+        <div style={{ color: "white" }} className="testingSearch">
           <Navigation value={0} history={this.props} />
           <h1>No Results for {query}</h1>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="testingSearch">
           <Navigation value={0} history={this.props} />
           {this.props.search.results.map((movie, i) => {
             return (

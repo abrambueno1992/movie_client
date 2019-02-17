@@ -69,7 +69,7 @@ class DisplaySelection extends Component {
     const urlBaseBackdrop = `https://image.tmdb.org/t/p/w1280`;
     if (this.state.selection === "") {
       return (
-        <div>
+        <div className="display-selection">
           <h3>Loading...</h3>
         </div>
       );

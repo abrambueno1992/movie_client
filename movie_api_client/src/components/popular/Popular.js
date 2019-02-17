@@ -27,7 +27,7 @@ class Popular extends Component {
     const urlBaseBackdrop = `https://image.tmdb.org/t/p/original`;
     if (this.state.loading === true) {
       return (
-        <div>
+        <div className="testingPopular">
           <h1>Loading... </h1>
         </div>
       );
