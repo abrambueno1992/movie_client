@@ -27,13 +27,13 @@ class TopRated extends Component {
     const urlBase = `https://image.tmdb.org/t/p/w500`;
     if (this.state.loading === true) {
       return (
-        <div>
+        <div className="testingTopRated">
           <h1>Loading...</h1>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="testingTopRated">
           <Navigation value={3} history={this.props} />
           {this.props.top_rated.results.map((movie, i) => {
             return (
