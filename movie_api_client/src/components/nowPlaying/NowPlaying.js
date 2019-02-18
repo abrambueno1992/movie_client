@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getNowPlaying } from "../../actions/nowPlaying";
 import { searchMovie } from "../../actions/search";
@@ -67,7 +67,9 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { getNowPlaying, searchMovie }
-)(NowPlaying);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { getNowPlaying, searchMovie }
+  )(NowPlaying)
+);

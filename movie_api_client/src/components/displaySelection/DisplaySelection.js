@@ -4,7 +4,8 @@ import { getTopRated } from "../../actions/topRated";
 import { getNowPlaying } from "../../actions/nowPlaying";
 import { getPopular } from "../../actions/popular";
 import { searchMovie } from "../../actions/search";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+
 import Navigation from "../navigation/Navigation";
 import "./DisplaySelection.css";
 class DisplaySelection extends Component {
@@ -105,7 +106,9 @@ const mapStateToProps = state => {
     search: state.search
   };
 };
-export default connect(
-  mapStateToProps,
-  { getNowPlaying, getTopRated, getPopular, searchMovie }
-)(DisplaySelection);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { getNowPlaying, getTopRated, getPopular, searchMovie }
+  )(DisplaySelection)
+);

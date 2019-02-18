@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+
 import { connect } from "react-redux";
 import { searchMovie } from "../../actions/search";
 import Navigation from "../navigation/Navigation";
@@ -71,7 +72,9 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { searchMovie }
-)(Search);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { searchMovie }
+  )(Search)
+);

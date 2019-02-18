@@ -3,41 +3,38 @@ import { mount } from "enzyme";
 import Root from "../../Root";
 // Components
 import Search from "../search/Search";
+import { MemoryRouter } from "react-router";
 import App from "../App";
 
 let wrapped;
-// beforeEach(() => {
-//   wrapped = mount(
-//     <Root>
-//       <Search />
-//     </Root>
-//   );
-// });
+beforeEach(() => {
+  wrapped = mount(
+    <Root>
+      <MemoryRouter
+        initialEntries={[
+          "/",
+          "/now-playing/:id",
+          "/popular",
+          "/popular/:id",
+          "/top-rated",
+          "/top-rated/:id",
+          "/search/:query",
+          "/search/:query/result/:id"
+        ]}
+        initialIndex={6}
+      >
+        <Search />
+      </MemoryRouter>
+    </Root>
+  );
+});
 
-// afterEach(() => {
-//   wrapped.unmount();
-// });
+afterEach(() => {
+  wrapped.unmount();
+});
 
-// describe("Search", () => {
-//   it("should render successfully and contain testing div", () => {
-//     expect(wrapped.find(".testingSearch").length).toEqual(1);
-//   });
-// });
-// let wrapped;
-// beforeEach(() => {
-//   wrapped = mount(
-//     <Root>
-//       <Search />
-//     </Root>
-//   );
-// });
-
-// afterEach(() => {
-//   wrapped.unmount();
-// });
-
-// describe("ConnectedShowBox", () => {
-//   it("should render successfully and contain testing div", () => {
-//     expect(wrapped.find(".testingSearch").length).toEqual(1);
-//   });
-// });
+describe("Search", () => {
+  it("should render successfully and contain testing div", () => {
+    expect(wrapped.find(".testingSearch").length).toEqual(1);
+  });
+});

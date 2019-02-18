@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getPopular } from "../../actions/popular";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+
 import Navigation from "../navigation/Navigation";
 class Popular extends Component {
   constructor(props) {
@@ -65,7 +66,9 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { getPopular }
-)(Popular);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { getPopular }
+  )(Popular)
+);

@@ -3,7 +3,8 @@ import { mount } from "enzyme";
 import Root from "../../Root";
 // Components
 import Popular from "../popular/Popular";
-
+import { MemoryRouter } from "react-router";
+import App from "../App";
 const arrData = {
   page: 1,
   total_results: 19827,
@@ -49,7 +50,21 @@ let wrapped;
 beforeEach(() => {
   wrapped = mount(
     <Root>
-      <Popular popular={arrData} />
+      <MemoryRouter
+        initialEntries={[
+          "/",
+          "/now-playing/:id",
+          "/popular",
+          "/popular/:id",
+          "/top-rated",
+          "/top-rated/:id",
+          "/search/:query",
+          "/search/:query/result/:id"
+        ]}
+        initialIndex={2}
+      >
+        <App />
+      </MemoryRouter>
     </Root>
   );
 });
@@ -61,7 +76,7 @@ afterEach(() => {
 describe("Popular", () => {
   it("should render successfully and contain testing div", () => {
     // wrapped.setProps({ popular: arrData });
-    expect(wrapped.find(".testingPopular").length).toEqual(1);
+    expect(wrapped.find(Popular).length).toEqual(1);
   });
 });
 

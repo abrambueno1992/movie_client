@@ -1,5 +1,3 @@
-import axios from "axios";
-import "cross-fetch/polyfill";
 export const GET_NOW_PLAYING = "GET_NOW_PLAYING";
 export const GET_NOW_PLAYING_REQUEST = "GET_NOW_PLAYING_REQUEST";
 const api_key = process.env.REACT_APP_API_KEY;

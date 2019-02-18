@@ -4,13 +4,29 @@ import Root from "../../Root";
 
 import getNowPlaying from "../../actions/nowPlaying";
 // Components
+import { MemoryRouter } from "react-router";
 import NowPlaying from "../nowPlaying/NowPlaying";
+import App from "../App";
 
 let wrapped;
 beforeEach(() => {
   wrapped = mount(
     <Root>
-      <NowPlaying />
+      <MemoryRouter
+        initialEntries={[
+          "/",
+          "/now-playing/:id",
+          "/popular",
+          "/popular/:id",
+          "/top-rated",
+          "/top-rated/:id",
+          "/search/:query",
+          "/search/:query/result/:id"
+        ]}
+        initialIndex={0}
+      >
+        <App />
+      </MemoryRouter>
     </Root>
   );
 });

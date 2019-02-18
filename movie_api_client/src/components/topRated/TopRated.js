@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getTopRated } from "../../actions/topRated";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+
 import Navigation from "../navigation/Navigation";
 // css
 import "./TopRated.css";
@@ -64,7 +65,9 @@ const mapStateToProps = state => {
     top_rated: state.top_rated
   };
 };
-export default connect(
-  mapStateToProps,
-  { getTopRated }
-)(TopRated);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { getTopRated }
+  )(TopRated)
+);
