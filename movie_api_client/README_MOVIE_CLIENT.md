@@ -7,6 +7,16 @@ This is a movie client using The Movie Database (TMDb) API. This movie client fe
 ## Components logic and tests
 
 There are three main files that deal with the setup of the application such as the redux store, react router, and regular React setup. Root.js (at the root of src/) does the setup for the redux store, index.js (at the root of src/) does the React setup for the ReactDOM, and App.js (at the root of components/) does the React Router setup for the components.
+<br>
+<br>
+The component located at the root path "/" is the NowPlaying component, which launches the redux action to dispatch and return the data for the NowPlaying component through the now_playing props.
+<br>
+<br>
+The component located at "/popular" is the Popular component, which launches the redux action to dispatch and return the data for the Popular component through the popular props.
+<br>
+<br>
+The component located at "/top-rated" is the TopRated component, which launches the redux action to dispatch and return the data for the TopRated component through the top_rated props.
+<br>
 
 ## Redux Actions, State, and tests
 
