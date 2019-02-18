@@ -2,9 +2,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Introduction
 
-This is a movie client using The Movie Database (TMDb) API. This movie client fetches movie data from four selections: now playing, popular, top rated, and results from a movie search. When the application launches, it displays movies from the selection that are now playing. The navigation bar at top has links to redirect to different selections such as top rated movies, popular movies, now playing (default when the application starts) and a search bar (for any movie). This application uses React Router to redirect to different components, uses Redux for state management of the application, and uses Jest with Enzyme for testing components and redux actions. This application requires an API key provided by The Movie Database to do requests with their API. The API key needs to be saved in a .env file with the variable name of REACT_APP_API_KEY. To sign up for an account go to: [https://www.themoviedb.org/account/signup](https://www.themoviedb.org/account/signup)
+This is a movie client using The Movie Database (TMDb) API. This movie client fetches movie data from four selections: now playing, popular, top rated, and results from a movie search. When the application launches, it displays movies from the selection that are now playing. The navigation bar at top has links to redirect to different selections such as top rated movies, popular movies, now playing (default when the application starts) and a search bar (for any movie). This application uses React Router to redirect to different components, uses Redux for state management of the application, and uses Jest with Enzyme for testing components and redux actions. This application requires an API key provided by The Movie Database for requests with their API. The API key needs to be saved in a .env file with the variable name of REACT_APP_API_KEY. To sign up for an account go to: [https://www.themoviedb.org/account/signup](https://www.themoviedb.org/account/signup)
 
 ## Components logic and tests
+
+There are three main files that deal with the setup of the application such as the redux store, react router, and regular React setup. Root.js (at the root of src/) does the setup for the redux store, index.js (at the root of src/) does the React setup for the ReactDOM, and App.js (at the root of components/) does the React Router setup for the components.
 
 ## Redux Actions, State, and tests
 
