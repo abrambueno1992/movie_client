@@ -12,10 +12,19 @@ There are three main files that deal with the setup of the application such as t
 The component located at the root path "/" is the NowPlaying component, which launches the redux action to dispatch and return the data for the NowPlaying component through the now_playing props.
 <br>
 <br>
-The component located at "/popular" is the Popular component, which launches the redux action to dispatch and return the data for the Popular component through the popular props.
+The component located at path "/popular" is the Popular component, which launches the redux action to dispatch and return the data for the Popular component through the popular props.
 <br>
 <br>
-The component located at "/top-rated" is the TopRated component, which launches the redux action to dispatch and return the data for the TopRated component through the top_rated props.
+The component located at path "/top-rated" is the TopRated component, which launches the redux action to dispatch and return the data for the TopRated component through the top_rated props.
+<br>
+<br>
+The component located at path "/search/:query" is the Search component, which uses the search query that was submitted from the input. The input for the search is located at the Navigation component. The Navigation component launches the actions to dispatch and return the state to the redux store. After launching the action to dispatch, it's redirected to "/search/:query" to render the Search component with the proper data; the query is the input string that was submitted.
+<br>
+<br>
+<br>
+<br>
+Each of the three components (at path "/", "/popular", "/top-rated") have the ability to click on a movie to have see more details about the movie. When the user makes a selection, they will be redirected to the DisplaySelection component. There are four possible redirects to the Display component depending on the current selection: at "/" it's redirected to "/now-playing/:id", at "/popular" it's redirected to "/popular/:id", at "/top-rated" it's redirected to "/top-rated/:id", and at "/search/:query" it's redirected to "/search/:query/result/:id". All of these redirects render the DisplayComponent with the proper data.
+<br>
 <br>
 
 ## Redux Actions, State, and tests
