@@ -37,8 +37,6 @@ afterEach(() => {
 
 describe("DisplaySelection", () => {
   it("should render successfully and contain testing div", () => {
-    // wrapped.setProps({ popular: arrData });
-
     expect(wrapped.find(DisplaySelection).length).toEqual(1);
   });
 });

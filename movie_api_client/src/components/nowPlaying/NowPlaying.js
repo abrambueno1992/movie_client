@@ -16,7 +16,11 @@ class NowPlaying extends Component {
   }
 
   componentDidMount = () => {
-    this.fetchData();
+    if (this.props.now_playing === null) {
+      this.fetchData();
+    } else {
+      this.setState({ loading: false });
+    }
   };
 
   fetchData = () => {

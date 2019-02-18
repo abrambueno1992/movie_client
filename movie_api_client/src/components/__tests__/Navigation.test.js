@@ -20,7 +20,6 @@ afterEach(() => {
 
 describe("Navigation", () => {
   it("should render successfully and contain testing div", () => {
-    // wrapped.setProps({ popular: arrData });
     expect(wrapped.find(".testingNavigation").length).toEqual(1);
   });
 });

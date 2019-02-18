@@ -75,17 +75,6 @@ afterEach(() => {
 
 describe("Popular", () => {
   it("should render successfully and contain testing div", () => {
-    // wrapped.setProps({ popular: arrData });
     expect(wrapped.find(Popular).length).toEqual(1);
   });
 });
-
-//   wrapped = mount(
-//     <Root>
-//       <App>
-//         <Router>
-//           <Route exact path="/popular" component={Popular} />
-//         </Router>
-//       </App>
-//     </Root>
-//   );
