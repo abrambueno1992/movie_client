@@ -30,13 +30,22 @@ Each of the three components (at path "/", "/popular", "/top-rated") have the ab
 
 ## Redux Actions, State, and tests
 
-The initial state is the following:
+The redux store initial state is the following, default is null:
 
 ```
-now_playing: null,
-  top_rated: null,
-  popular: null,
-  search: null,
+    now_playing: null,  <--- redux store state used in NowPlaying component
+    top_rated: null, <--- redux store state used in TopRated component
+    popular: null,  <--- redux store state used in Popular component
+    search: null,   <--- redux store state used in Search component
+```
+
+The redux store state is populated with data after the following actions are dispatched. Each of these actions are dipatched inside of the components that need the data, and they're only dispatched if there's no data (null).
+
+```
+getNowPlaying() <--- returns dispatch of data for the now_playing state
+getPopular()    <--- returns dispatch of data for the popular state
+getTopRated()   <--- returns dispatch of data for the top_rated
+searchMovie(searchString)   <--- returns dispatch of data for the search
 ```
 
 ### `npm start`
