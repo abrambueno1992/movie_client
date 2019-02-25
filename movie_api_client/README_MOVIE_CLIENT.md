@@ -10,6 +10,8 @@ Once the API key is in the .env file, run `yarn` or `npm install` at the same le
 
 ## Components logic
 
+Redirects between components happen with the use of React Router, and it's through a Navigation component inside of all the different routes. At the root "/", you can redirect to any other route with the links in the Navigation component, which will cause a different component to mount. The Navigation component is a component that's constant, is the same in all different links, `popular`, `top rated`, and now `playing`.
+
 There are three main files that deal with the setup of the application such as the redux store, react router, and regular React setup. Root.js (at the root of src/) does the setup for the redux store, index.js (at the root of src/) does the React setup for the ReactDOM, and App.js (at the root of components/) does the React Router setup for the components.
 <br>
 <br>
@@ -51,18 +53,3 @@ getPopular()    <--- returns dispatch of data for the popular state
 getTopRated()   <--- returns dispatch of data for the top_rated state
 searchMovie(searchString)   <--- returns dispatch of data for the search state
 ```
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
