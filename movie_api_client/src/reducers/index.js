@@ -7,7 +7,6 @@ const initialState = {
   top_rated: null,
   popular: null,
   search: null,
-  movie_index: 0
 };
 const movieState = (state = initialState, action) => {
   switch (action.type) {

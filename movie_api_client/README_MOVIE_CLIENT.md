@@ -10,7 +10,7 @@ Once the API key is in the .env file, run `yarn` or `npm install` at the same le
 
 ## Components logic
 
-Redirects between components happen with the use of React Router, and it's through a Navigation component inside of all the different routes. At the root "/", you can redirect to any other route with the links in the Navigation component, which will cause a different component to mount. The Navigation component is a component that's constant, is the same in all different links, `popular`, `top rated`, and now `playing`.
+Redirects between components happen with the use of React Router, and it's through a Navigation component inside of all the different routes. At the root "/", you can redirect to any other route with the links in the Navigation component, which will cause a different component to mount. The Navigation component is a component that's constant, it's the same in all different link selections, `popular`, `top rated`, and now `playing`. When a component mounts, it checks the state in the props to make sure it's not null, otherwise it will dispatch actions to get the data to the redux store and then to the component. Once the component has the data, then the selection (now playing, popular, top rated, or search) will render on the screen.
 
 There are three main files that deal with the setup of the application such as the redux store, react router, and regular React setup. Root.js (at the root of src/) does the setup for the redux store, index.js (at the root of src/) does the React setup for the ReactDOM, and App.js (at the root of components/) does the React Router setup for the components.
 <br>
@@ -46,6 +46,9 @@ The redux store initial state is the following, default is null:
 ```
 
 The redux store state is populated with data after the following actions are dispatched. Each of these actions are dipatched inside of the components that need the data, and they're only dispatched if there's no data (null).
+<br>
+<br>
+Action methods
 
 ```
 getNowPlaying() <--- returns dispatch of data for the now_playing state
